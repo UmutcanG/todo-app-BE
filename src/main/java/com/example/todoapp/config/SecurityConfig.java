@@ -35,7 +35,8 @@ public class SecurityConfig {
                         .requestMatchers("/todo/secure","todo/welcome").authenticated()
                         .requestMatchers("/**").denyAll())
                 .formLogin(login -> login
-                        .defaultSuccessUrl("/todo/welcome", true)
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/todo/welcome",true)
                         .permitAll())
                 .build();
     }
