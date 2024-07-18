@@ -35,4 +35,18 @@ public class TodoController {
     public Todo updateTodo(@PathVariable Long id ,@Valid @RequestBody Todo todo ) {
         return todoService.updatedTodo(id,todo);
     }
+    @GetMapping("/unsecure")
+    public String unsecure(){
+        return "unsecure";
+    }
+
+    @GetMapping("/welcome")
+    public String welcome(){
+        return "welcome";
+    }
+
+    @GetMapping("/secure")
+    public String secure(){
+        return "secured...";
+    }
 }
